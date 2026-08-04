@@ -1,0 +1,39 @@
+# Local Python environment
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets and sensitive local data
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+*.pem
+*.key
+
+workflow_doc.md
+
+# Runtime and customer-like data
+*.log
+logs/
+*.sql
+*.dump
+exports/
+backups/
+
+# Generated ML artifacts and model weights
+runs/
+outputs/
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Local editor and OS metadata
+.DS_Store
+.idea/
+.vscode/
