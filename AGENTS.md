@@ -34,7 +34,7 @@
 
 - Ветка `main` синхронизирована с публичным `origin`: `https://github.com/A7med373/yolo_sandbox`.
 - Исследовательское окружение: `.venv`, Python 3.10.12, Ultralytics 8.4.115, PyTorch 2.13.0, torchvision 0.28.0, OpenCV 5.0.0, lap 0.5.13.
-- Проверенный baseline: `yolo26n.pt`, detect, PyTorch CPU; MPS недоступен. Веса, публичные test media, caches и `.venv/` исключены через `.gitignore`.
+- Проверенный baseline: `yolo26n.pt`, detect, `DetectionModel`, `end2end=True`, 80 классов, PyTorch CPU; MPS недоступен. Веса, публичные test media, caches и `.venv/` исключены через `.gitignore`.
 - `examples/predict_cpu.py`: фактические классы `YOLO` → `DetectionPredictor` → `Results` → `Boxes`; на test image `Boxes.data` имеет `(5, 6)`, `float32`, CPU.
 - `examples/track_cpu.py`: default tracker — `tracktrack.yaml`, класс `TRACKTRACK`; tracked `Boxes.data` имеет 7 столбцов и доступный `Boxes.id`.
 - Реальные project task, checkpoint, deployment backend, режим `end2end` и требования к tracking пока не подтверждены.
