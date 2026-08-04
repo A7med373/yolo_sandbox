@@ -32,12 +32,12 @@
 
 ## Текущее состояние
 
-- Исходников проекта, весов, примеров медиа и конфигурации запуска пока нет.
 - Ветка `main` синхронизирована с публичным `origin`: `https://github.com/A7med373/yolo_sandbox`.
-- Создано локальное окружение `.venv` с Python 3.10.12; пакет `ultralytics` в нём не установлен.
-- Локальная документация и `.venv/` исключены через `.gitignore`.
-- Целевое семейство подтверждено: YOLO26. На 2026-08-04 последний официальный release Ultralytics — `v8.4.115`, но проектная версия пакета ещё не выбрана.
-- PyTorch, backend, task, размер/веса модели, источники данных и требования к tracking пока не подтверждены.
+- Исследовательское окружение: `.venv`, Python 3.10.12, Ultralytics 8.4.115, PyTorch 2.13.0, torchvision 0.28.0, OpenCV 5.0.0, lap 0.5.13.
+- Проверенный baseline: `yolo26n.pt`, detect, PyTorch CPU; MPS недоступен. Веса, публичные test media, caches и `.venv/` исключены через `.gitignore`.
+- `examples/predict_cpu.py`: фактические классы `YOLO` → `DetectionPredictor` → `Results` → `Boxes`; на test image `Boxes.data` имеет `(5, 6)`, `float32`, CPU.
+- `examples/track_cpu.py`: default tracker — `tracktrack.yaml`, класс `TRACKTRACK`; tracked `Boxes.data` имеет 7 столбцов и доступный `Boxes.id`.
+- Реальные project task, checkpoint, deployment backend, режим `end2end` и требования к tracking пока не подтверждены.
 
 ## Полезные безопасные команды
 
@@ -45,5 +45,7 @@
 - `.venv/bin/python -c "import sys; print(sys.executable); print(sys.version)"` — проверить интерпретатор.
 - `.venv/bin/python -m pip show ultralytics torch` — проверить установленные версии в выбранном окружении.
 - `.venv/bin/python -c "import ultralytics; print(ultralytics.__version__); print(ultralytics.__file__)"` — подтвердить версию и путь пакета.
+- `.venv/bin/python examples/predict_cpu.py` — минимальный detection на CPU.
+- `.venv/bin/python examples/track_cpu.py --frames 20` — минимальный tracking на CPU.
 
 Обновлять этот файл после подтверждения окружения и завершения каждого существенного этапа исследования; хранить здесь только устойчивые факты и следующие шаги.

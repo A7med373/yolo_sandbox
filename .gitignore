@@ -1,5 +1,6 @@
 # Local Python environment
 .venv/
+.local/
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -18,6 +19,7 @@ credentials/
 workflow_doc.md
 
 # Runtime and customer-like data
+data/
 *.log
 logs/
 *.sql
