@@ -47,6 +47,7 @@
 - Проверенный baseline: `yolo26n.pt`, detect, `DetectionModel`, `end2end=True`, 80 классов, PyTorch CPU; MPS недоступен. Веса, публичные test media, caches и `.venv/` исключены через `.gitignore`.
 - `examples/predict_cpu.py`: фактические классы `YOLO` → `DetectionPredictor` → `Results` → `Boxes`; на test image `Boxes.data` имеет `(5, 6)`, `float32`, CPU.
 - `examples/track_cpu.py`: default tracker — `tracktrack.yaml`, класс `TRACKTRACK`; tracked `Boxes.data` имеет 7 столбцов и доступный `Boxes.id`.
+- `workflow_doc.md` санитизирован 2026-08-05: реальные credentials и internal URLs заменены placeholders. Файл остаётся ignored; использовать его как process guide, но не как источник актуальных connection values.
 - Реальные project task, checkpoint, deployment backend, режим `end2end` и требования к tracking пока не подтверждены.
 
 ## Полезные безопасные команды
